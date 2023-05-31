@@ -8,6 +8,42 @@
     <title>ДЗ 37</title>
 </head>
 <body>
+<div style="display: flex">
+    <div class="categories" style="padding-right: 200px">Categories</div>
+    <div class="products" style="padding-right: 200px">Products</div>
+    <div class="product-details">Detail<button class="btn_buy">Buy</button></div>
+</div>
+
+<div id="orderForm">
+    <button id="buyButton">Купити</button>
+    <h2>Оформлення замовлення</h2>
+    <form>
+        <label for="name">ПІБ покупця:</label>
+        <input type="text" id="name" required><br><br>
+        <label for="city">Місто:</label>
+        <select id="city" required>
+            <option value=""></option>
+            <option value="Київ">Київ</option>
+            <option value="Львів">Львів</option>
+            <option value="Харків">Харків</option>
+            <option value="Одеса">Одеса</option>
+        </select><br><br>
+        <label for="post">Склад Нової пошти:</label>
+        <input type="text" id="post" required><br><br>
+        <label for="payment">Спосіб оплати:</label>
+        <select id="payment" required>
+            <option value=""></option>
+            <option value="післяплата">післяплата</option>
+            <option value="оплата банківської карти">оплата банківської карти</option>
+        </select><br><br>
+        <label for="quantity">Кількість товару:</label>
+        <input type="number" id="quantity" required><br><br>
+        <label for="comment">Коментар до замовлення:</label><br>
+        <textarea id="comment" rows="6" cols ="50"></textarea><br><br>
+        <button type="submit" id="confirmOrder">Підтвердити замовлення</button>
+    </form>
+</div>
+<div id="orderInfo"></div>
 <script src="main.js"></script>
 </body>
 </html>
