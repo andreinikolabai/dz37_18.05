@@ -103,7 +103,7 @@ const renderProductsDetails = (product) => {
                 payment: payment,
                 quantity: quantity,
                 comment: comment,
-                date: new Date().toLocaleDateString() // Add the current date
+                date: new Date().toLocaleDateString()
             };
 
             saveOrder(order);
@@ -124,7 +124,7 @@ const renderProductsDetails = (product) => {
 
             orderForm.style.display = 'none';
         } else {
-            alert('Будь ласка, заповніть всі обов\'язкові поля');
+            alert(`Будь ласка, заповніть всі обов'язкові поля`);
         }
     });
 };
@@ -147,14 +147,14 @@ const displayOrders = () => {
             const orderElement = document.createElement('div');
             orderElement.classList.add('order');
             const orderSummary = document.createElement('div');
-            orderSummary.classList.add('order-summary');
+            orderSummary.classList.add('order_summary');
             orderSummary.innerHTML = `
             <h3>Замовлення №${index + 1}</h3>
             <p>Дата: ${order.date}</p>
             <p>Ціна: ${order.product.price}</p>`;
 
             const orderDetails = document.createElement('div');
-            orderDetails.classList.add('order-details');
+            orderDetails.classList.add('order_details');
             orderDetails.innerHTML = `
             <p>Назва товару: ${order.product.name}</p>
             <p>Опис товару: ${order.product.description}</p>
@@ -164,7 +164,7 @@ const displayOrders = () => {
             <p>Спосіб оплати: ${order.payment}</p>
             <p>Кількість товару: ${order.quantity}</p>
             <p>Коментар до замовлення: ${order.comment}</p>
-            <button class="delete-order" data-order-index="${index}">Видалити замовлення</button>`;
+            <button class="delete_order" data-order-index="${index}">Видалити замовлення</button>`;
 
             orderElement.appendChild(orderSummary);
             orderElement.appendChild(orderDetails);
@@ -176,10 +176,10 @@ const displayOrders = () => {
 };
 
 const handleDeleteOrder = () => {
-    const deleteButtons = document.querySelectorAll('.delete-order');
+    const deleteButtons = document.querySelectorAll('.delete_order');
     deleteButtons.forEach(button => {
         button.addEventListener('click', () => {
-            const orderIndex = button.getAttribute('data-order-index');
+            const orderIndex = button.getAttribute('data_order_index');
             deleteOrder(orderIndex);
         });
     });
@@ -192,7 +192,7 @@ const deleteOrder = (orderIndex) => {
     displayOrders();
 };
 
-const myOrdersButton = document.getElementById('my-orders-btn');
+const myOrdersButton = document.getElementById('orders_btn');
 myOrdersButton.addEventListener('click', () => {
     categoriesContainer.style.display = 'none';
     productsContainer.style.display = 'none';
